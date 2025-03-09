@@ -14,9 +14,10 @@
     <name>spring-microservices</name>
     <packaging>pom</packaging>
 
-<!--    modulo de nuestro proyecto padre-->
+    <!--    modulo de nuestro proyecto padre-->
     <modules>
         <module>microservices-gateway</module>
+        <module>microservices-eureka</module>
     </modules>
 
     <properties>
