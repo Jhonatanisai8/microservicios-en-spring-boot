@@ -20,6 +20,7 @@
         <module>microservices-eureka</module>
         <module>microservices-config</module>
         <module>microservices-student</module>
+        <module>microservices-courses</module>
     </modules>
 
     <properties>
