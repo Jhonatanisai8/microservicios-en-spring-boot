@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface StudentRepository
-        extends CrudRepository<Student, Integer> {
+        extends CrudRepository<Student, Long> {
 
     @Query("select s from Student s WHERE s.courseID = :courseId")
     List<Student> findAllStudent(Long courseId);
