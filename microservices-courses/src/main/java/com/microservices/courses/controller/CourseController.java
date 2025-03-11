@@ -11,22 +11,23 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/courses")
+@RequestMapping("/api/courses")
 public class CourseController {
 
     @Autowired
     private CourseServiceImp courseServiceImp;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/allCourses")
     public ResponseEntity<?> getAllCourses() {
         List<Course> courses = courseServiceImp.getAllCourses();
+        System.out.println("Hi");
         return new ResponseEntity<>(courses, HttpStatus.OK);
     }
 
     @GetMapping("/search/{courseId}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<?> findCourseById(Long courseId) {
+    public ResponseEntity<?> findCourseById(@PathVariable Long courseId) {
         Course course = courseServiceImp.findCourseById(courseId);
         return new ResponseEntity<>(course, HttpStatus.OK);
     }
@@ -38,7 +39,7 @@ public class CourseController {
     }
 
     @GetMapping("/searchStudent/{courseId}")
-    public ResponseEntity<?> findStudentsByCourseId(Long courseId) {
+    public ResponseEntity<?> findStudentsByCourseId(@PathVariable Long courseId) {
         StudentByCourseResponse student = courseServiceImp.findStudentsByCourseId(courseId);
         return new ResponseEntity<>(student, HttpStatus.OK);
     }
