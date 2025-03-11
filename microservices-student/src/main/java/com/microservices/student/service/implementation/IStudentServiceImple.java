@@ -23,7 +23,7 @@ public class IStudentServiceImple
 
     @Override
     public Student findStudentById(Long id) {
-        return studentRepository.findById(id).get();
+        return studentRepository.findById(id).orElseThrow();
     }
 
     @Override
