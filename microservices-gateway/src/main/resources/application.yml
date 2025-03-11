@@ -10,9 +10,9 @@ spring:
     gateway:
       discovery:
         locator:
-          enable: true
+          enabled: true
       routes:
-        - id: students
+        - id: student
           uri: http://localhost:8090
           predicates:
             - Path=/api/student/**
