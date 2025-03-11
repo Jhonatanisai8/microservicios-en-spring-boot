@@ -32,7 +32,7 @@ public class IStudentServiceImple
     }
 
     @Override
-    public List<Student> findByCouseId(Long courseId) {
+    public List<Student> findByCourseId(Long courseId) {
         return studentRepository.findAllStudent(courseId);
     }
 }
