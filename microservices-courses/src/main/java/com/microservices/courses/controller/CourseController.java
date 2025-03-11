@@ -1,5 +1,6 @@
 package com.microservices.courses.controller;
 
+import com.microservices.courses.http.response.StudentByCourseResponse;
 import com.microservices.courses.models.Course;
 import com.microservices.courses.service.implementation.CourseServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,12 @@ public class CourseController {
     @PostMapping("/createCourse")
     public void saveCourse(@RequestBody Course course) {
         courseServiceImp.saveCourse(course);
+    }
+
+    @GetMapping("/searchStudent/{courseId}")
+    public ResponseEntity<?> findStudentsByCourseId(Long courseId) {
+        StudentByCourseResponse student = courseServiceImp.findStudentsByCourseId(courseId);
+        return new ResponseEntity<>(student, HttpStatus.OK);
     }
 
 }
