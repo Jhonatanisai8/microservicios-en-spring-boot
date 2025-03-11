@@ -11,7 +11,7 @@ import java.util.List;
 public interface StudentRepository
         extends CrudRepository<Student, Long> {
 
-    @Query("select s from Student s WHERE s.courseID = :courseId")
+    @Query("select s from Student s WHERE s.courseId = :courseId")
     List<Student> findAllStudent(Long courseId);
 
     // List<Student> findAllByCourseID(Long courseID);

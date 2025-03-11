@@ -11,10 +11,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "students")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long estudentID;
+    private Long studentId;
 
     @Column(nullable = false, length = 50)
     private String firstName;
@@ -25,7 +26,7 @@ public class Student {
     @Column(nullable = false, length = 50)
     private String email;
 
-    @Column(nullable = false, length = 50)
-    private Long courseID;
+    @Column(nullable = false)
+    private Long courseId;
 
 }
