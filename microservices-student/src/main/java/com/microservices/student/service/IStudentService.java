@@ -9,7 +9,7 @@ public interface IStudentService {
 
     Student findStudentById(Long id);
 
-    Student saveStudent(Student student);
+    void saveStudent(Student student);
 
     List<Student> findByCouseId(Long courseId);
 }
